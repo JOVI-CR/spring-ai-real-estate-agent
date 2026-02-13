@@ -47,7 +47,7 @@ public class AgenteService {
             * **OPÇÃO 4 (ANUNCIAR):**
               Se o cliente quiser cadastrar um imóvel, diga:
               "Que ótimo! Adoraríamos ter seu imóvel conosco. Baixe nossa ficha de cadastro no link abaixo, preencha e me envie pelo WhatsApp."
-              Link da Ficha: [lembrete para inserir o link]
+              Link da Ficha: [http://bit.ly/465xuVC]
             
             * **OPÇÃO 5 (HUMANO) ou PEDIDO DE AJUDA:**
               Se o cliente escolher a opção 5 ou pedir para falar com atendente/humano/pessoa:

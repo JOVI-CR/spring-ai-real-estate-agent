@@ -17,7 +17,7 @@ public class ImoveisBotApplication {
 		SpringApplication.run(ImoveisBotApplication.class, args);
 	}
 
-	@Bean
+//	@Bean
 	public CommandLineRunner testarIntegracao(AgenteService agentService) {
 		return args -> {
 			System.out.println("🤖 --- TESTE DE TRANSBORDO HUMANO (OPÇÃO 5) ---");
