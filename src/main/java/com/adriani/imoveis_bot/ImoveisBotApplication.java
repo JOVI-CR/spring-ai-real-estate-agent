@@ -1,6 +1,7 @@
 package com.adriani.imoveis_bot;
 
 import com.adriani.imoveis_bot.model.ImovelDTO;
+import com.adriani.imoveis_bot.service.AgenteService;
 import com.adriani.imoveis_bot.service.ImobiliariaService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -16,26 +17,21 @@ public class ImoveisBotApplication {
 		SpringApplication.run(ImoveisBotApplication.class, args);
 	}
 
-	// Isso aqui roda assim que o app inicia, só pra gente testar
 	@Bean
-	public CommandLineRunner testarIntegracao(ImobiliariaService service) {
+	public CommandLineRunner testarIntegracao(AgenteService agentService) {
 		return args -> {
-			System.out.println("🚀 Iniciando busca de imóveis...");
-			List<ImovelDTO> imoveis = service.buscarImoveis();
+			System.out.println("🤖 --- TESTE DE TRANSBORDO HUMANO (OPÇÃO 5) ---");
 
-			System.out.println("✅ Encontrados: " + imoveis.size() + " imóveis!");
+			String pergunta = "5";
 
-			// Imprime os 3 primeiros só pra gente ver se funcionou
-			imoveis.stream().limit(3).forEach(i -> {
-				System.out.println("--------------------------------------------------");
-				System.out.println("🏠 " + i.getTitulo());
-				System.out.println("💰 Preço: " + i.getPrecoFormatado());
-				System.out.println("📍 Endereço: " + i.getEndereco());
-			});
+			System.out.println("CLIENTE: " + pergunta);
 
-//			System.out.println("🐛 Iniciando Debug...");
-//
-//			service.debugJson();
+			String resposta = agentService.responderCliente(pergunta);
+
+			System.out.println("AGENTE: " + resposta);
+
+			System.out.println("--------------------------------------------------");
+			System.out.println("✅ Se você viu a mensagem de 'ALERTA' vermelha acima, o sistema funcionou!");
 		};
 	}
 }
